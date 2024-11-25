@@ -35,7 +35,7 @@ def is_valid(password):
 
 
 #Creating strenthen password function
-def strenthen_password(password):
+def strengthen_password(password):
     
     # Checks the length of the password
     
@@ -77,9 +77,12 @@ def strenthen_password(password):
             
 # Running the function(Loops until a strong password is recived)
 while True:
-    user_password = input("Enter a strong password: ")
+    user_password = input("Enter a strong password (or type 'exit' to quit): ")
+    if user_password.lower() == "exit":
+        print("Program exited.")
+        break
     if is_valid(user_password):
         print("Password is Strong")
         break
     else:
-        print(strenthen_password(user_password))
+        print(strengthen_password(user_password))
